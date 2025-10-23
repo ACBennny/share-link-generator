@@ -1,0 +1,277 @@
+/*********************************************************************
+ * Styling of the "Share Link Generator" page
+ * 
+ * @author (Anyanwu Benedict Chuwkwuemeka)
+ * @version 0.01
+*********************************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bcg-handle) var(--bcg-trpnt);
+}
+
+html:root
+{
+    --bcg-base: #38776d;
+    --bcg-bright: #ffffff;
+    --bcg-handle: #cdcdcdcd;
+    --bcg-shade: #77777777;
+    --bcg-trpnt: #00000000;
+    --bcg-white: #eafff0;
+    --font-clr-heavy: #ffffff;
+    --font-clr-mid: #cccccc;
+    --font-clr-light: #ffffff88;
+    --font-shadow: #77777777;
+    --transition-flow: 250ms;
+    --transition-delay: 100ms;
+    --bdr_rad: 0.3125rem;
+}
+
+html
+{
+    background-color: var(--bcg-base);
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    background-color: var(--bcg-base);
+}
+
+@supports(-webkit-tap-highlight-color: var(--bcg-trpnt))
+{
+    body
+    {
+        -webkit-tap-highlight-color: var(--bcg-trpnt);
+    }
+}
+
+button, input, textarea
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bcg-trpnt);
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+button
+{
+    cursor: pointer;
+}
+
+button:active
+{
+    scale: 0.975;
+}
+
+
+.wrapper
+{
+    width: 100%;
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.greeting
+{
+    color: var(--font-clr-heavy);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.description
+{
+    color: var(--font-clr-mid);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.author
+{
+    color: var(--font-clr-mid);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: center;
+    filter: brightness(1.125);
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.optBdr
+{
+    width: 100%;
+    margin-top: 1.125rem;
+}
+
+.optBdr .optBox
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.optBox .optBtn
+{
+    padding: 0.25rem 0.625rem;
+    color: var(--bcg-base);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 3.125rem;
+    background-color: var(--bcg-white);
+    transition: all var(--transition-flow) ease-in-out;
+}
+
+.form_bdr 
+{
+    width: 100%;
+    max-width: 35rem;
+    margin-top: 2rem;
+}
+
+.form_bdr:empty
+{
+    display: none;
+}
+
+.form_bdr .form_box
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .625rem;
+    background-color: var(--bcg-white);
+}
+
+.form_box .form_hdr
+{
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.form_box .form_fld_ttl
+{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form_box .form_fld_wrapper
+{
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: var(--bdr_rad);
+    border: 0.0625rem solid var(--bcg-base);
+}
+
+.form_fld_wrapper .form_fld_box
+{
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.form_fld_wrapper .form_fld_inp
+{
+    width: 100%;
+    height: 2.5rem;
+}
+
+.form_fld_wrapper .form_fld_txtar
+{
+    width: 100%;
+    height: 6.25rem;
+}
+
+.form_box .form_atn_btn
+{
+    width: 100%;
+    padding: 0.75rem 0;
+    color: var(--bcg-bright);
+    border-radius: var(--bdr_rad);
+    background-color: var(--bcg-base);
+    transition: all var(--transition-flow) ease-in-out;
+}
+
+.form_box .form_rslt_bdr
+{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease-out;
+}
+
+.form_box.show .form_rslt_bdr
+{
+    margin-top: 0.625rem;
+    grid-template-rows: 1fr;
+}
+
+.form_rslt_bdr .form_rslt_bcg
+{
+    overflow: hidden;
+}
+
+.form_rslt_bcg .form_rslt_box
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_box.show .form_rslt_bdr 
+.form_fld_wrapper .form_fld_box
+{
+    user-select: all;
+}
+
+
+
+
+@media(hover: hover)
+{
+    .optBtn:hover
+    {
+        background-color: var(--bcg-bright);
+        scale: 1.0125;
+    }
+}
+
+
+
+@media only screen and (max-width: 48rem)
+{
+    .greeting
+    {
+        font-size: 2rem;
+    }
+
+    .description
+    {
+        font-size: 1rem;
+    }
+
+    .optBox .optBtn
+    {
+        font-size: 0.875rem;
+    }
+}
+
+
