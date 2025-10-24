@@ -449,6 +449,13 @@ const scl_opt =
             formBdr.innerHTML = "";
             formBdr.appendChild(formBox);
 
+            // Automatically scroll to bottom of page to ensure form is fully displayed
+            window.scroll(
+            {
+                top: document.documentElement.clientHeight,
+                behavior: "smooth",
+            });
+
             // Prevents unintended submissions
             const allFormFields = formElem.querySelectorAll("input");
             allFormFields.forEach((fld) => 
@@ -574,7 +581,7 @@ const scl_opt =
                 // Display the generated links
                 formBox.classList.add("show");
 
-                // Automatically scroll to bottom of page (primarirly for mobile)
+                // Automatically scroll to bottom of page to ensure results are fully displayed
                 document.querySelector(".form_rslt_bdr").ontransitionend = () =>
                 {
                     window.scroll(
