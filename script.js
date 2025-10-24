@@ -573,6 +573,16 @@ const scl_opt =
 
                 // Display the generated links
                 formBox.classList.add("show");
+
+                // Automatically scroll to bottom of page (primarirly for mobile)
+                document.querySelector(".form_rslt_bdr").ontransitionend = () =>
+                {
+                    window.scroll(
+                    {
+                        top: document.documentElement.clientHeight,
+                        behavior: "smooth",
+                    });
+                }
             }
 
             // Generate links on submission
